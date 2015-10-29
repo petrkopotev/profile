@@ -19,7 +19,11 @@ alias bk='./kapow-build; build-notify'
 
 # enable git bash prompt support
 GIT_PROMPT_ONLY_IN_REPO=1
-source bash-git-prompt/gitprompt.sh
+
+BASE_DIR=$(dirname ${BASH_SOURCE[0]})
+if [ -f $BASE_DIR/bash-git-prompt/gitprompt.sh ]; then
+    . $BASE_DIR/bash-git-prompt/gitprompt.sh
+fi
 
 alias gl='git log --branches=* --graph --decorate=short'
 
