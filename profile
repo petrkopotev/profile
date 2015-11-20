@@ -32,11 +32,16 @@ fi
 
 alias gl='git log --branches=* --graph --decorate=short'
 
-function setPrompt() {
+function getEmoji() {
   RANGE=${#emoji[@]}
   let 'RANGE += 1'
   number=$RANDOM
   let "number %= $RANGE"
+  local result=${emoji[$number]}
+  echo $result
+}
 
-  PS1='\w\$ ${emoji[$number]}  '
+function setPrompt() {
+  emoji=$(getEmoji)
+  PS1='\w\$ $emoji  '
 }
