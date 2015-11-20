@@ -16,6 +16,11 @@ function build-notify {
 
 alias mk='make -j8; build-notify'
 alias bk='./kapow-build; build-notify'
+#prompt
+emoji=(😄 😃 😀 😊 ☺ 😉 😍 😘 😚 😗 😙 😜 😝 😛 😳 😁 😔 😌 😒 😞 😣 😢 😂 😭 😪 😥 😰 😅 😓 😩 😫 😨 😱 😠 😡 😤 😖 😆 😋 😷 😎 😴 😵 😲 😟 😦 😧 😈 👿 😮 😬 😐 😕 😯 😶 😇 😏 😑 ) 
+PROMPT_COMMAND=setPrompt
+PS1='\w\$ ${emoji[0]} '
+
 
 # enable git bash prompt support
 GIT_PROMPT_ONLY_IN_REPO=1
@@ -27,3 +32,11 @@ fi
 
 alias gl='git log --branches=* --graph --decorate=short'
 
+function setPrompt() {
+  RANGE=${#emoji[@]}
+  let 'RANGE += 1'
+  number=$RANDOM
+  let "number %= $RANGE"
+
+  PS1='\w\$ ${emoji[$number]}  '
+}
