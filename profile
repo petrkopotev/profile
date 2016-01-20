@@ -3,8 +3,14 @@
 export PATH=/usr/local/bin/gold/:/usr/lib/ccache:~/bin:$PATH
 # addind node path
 export PATH=/opt/node/bin:$PATH
+#adding depot_tools
+export PATH=~/Work/chromium/depot_tools:$PATH
+# ccache support
 export CCACHE_HARDLINK=1
 export CCACHE_SLOPPINESS=time_macros
+
+#linux sandbox
+export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 function build-notify {
   if [ $? -eq 0 ]; then
@@ -16,6 +22,7 @@ function build-notify {
 
 alias mk='make -j8; build-notify'
 alias bk='./kapow-build; build-notify'
+alias ninjad='ninja -C out/Debug -v'
 #prompt
 emoji=(😄 😃 😀 😊 ☺ 😉 😍 😘 😚 😗 😙 😜 😝 😛 😳 😁 😔 😌 😒 😞 😣 😢 😂 😭 😪 😥 😰 😅 😓 😩 😫 😨 😱 😠 😡 😤 😖 😆 😋 😷 😎 😴 😵 😲 😟 😦 😧 😈 👿 😮 😬 😐 😕 😯 😶 😇 😏 😑 ) 
 PROMPT_COMMAND=setPrompt
