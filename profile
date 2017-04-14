@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 export PATH=/usr/local/bin/gold/:/usr/lib/ccache:~/bin:$PATH
-# addind node path
-export PATH=/opt/node/bin:$PATH
 #adding depot_tools
-export PATH=~/Work/chromium/depot_tools:$PATH
+export PATH=~/Work/kapowcef/depot_tools:$PATH
 # ccache support
 export CCACHE_HARDLINK=1
+#export CCACHE_PREFIX=distcc
 export CCACHE_SLOPPINESS=time_macros
+export CCACHE_LOGFILE=/tmp/ccache.log
+export CCACHE_CPP2=yes
 
 #linux sandbox
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
