@@ -25,7 +25,7 @@ alias mk='make -j8; build-notify'
 alias bk='./kapow-build; build-notify'
 alias ninjad='ninja -C out/Debug -v'
 #prompt
-emoji=(😄 😃 😀 😊 ☺ 😉 😍 😘 😚 😗 😙 😜 😝 😛 😳 😁 😔 😌 😒 😞 😣 😢 😂 😭 😪 😥 😰 😅 😓 😩 😫 😨 😱 😠 😡 😤 😖 😆 😋 😷 😎 😴 😵 😲 😟 😦 😧 😈 👿 😮 😬 😐 😕 😯 😶 😇 😏 😑 ) 
+emoji=(😄 😃 😀 😊 ☺ 😉 😍 😘 😚 😗 😙 😜 😝 😛 😳 😁 😔 😌 😒 😞 😣 😢 😂 😭 😪 😥 😰 😅 😓 😩 😫 😨 😱 😠 😡 😖 😆 😋 😷 😎 😴 😵 😲 😟 😦 😧 😈 😮 😐 😕 😯 😶 😇 😏 😑 ) 
 PROMPT_COMMAND=setPrompt
 PS1='\w\$ ${emoji[0]} '
 
